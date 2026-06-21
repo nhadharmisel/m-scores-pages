@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>比分网 · 赛事数据知识库</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #faf7f2;
+      font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      line-height: 1.75;
+      color: #2e2b26;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #fefcf8;
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #2a2722;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+      border-left: 5px solid #b07c5b;
+      padding-left: 1rem;
+    }
+    .subhead {
+      font-size: 0.95rem;
+      color: #7d746c;
+      margin-bottom: 2rem;
+      padding-left: calc(1rem + 5px);
+    }
+    .intro {
+      margin: 0 0 2rem 0;
+      background: #f5f0ea;
+      padding: 1.5rem 1.8rem;
+      border-radius: 20px;
+    }
+    .intro p {
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+    }
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0 2.5rem;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e7e0d6;
+      border-radius: 20px;
+      padding: 1.5rem 1.2rem 1.5rem 1.5rem;
+      transition: box-shadow 0.15s ease;
+    }
+    .card:hover {
+      box-shadow: 0 12px 30px -12px rgba(80, 60, 40, 0.08);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #3f3a34;
+    }
+    .highlight-block {
+      background: #f7f1e9;
+      border-left: 6px solid #bc8f6b;
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0 2rem;
+      border-radius: 0 16px 16px 0;
+      font-style: normal;
+    }
+    .highlight-block p {
+      margin-bottom: 0.5rem;
+    }
+    .highlight-block p:last-child {
+      margin-bottom: 0;
+    }
+    .info-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 2.2rem 0 1.8rem;
+      background: #f9f6f1;
+      padding: 1.5rem 1.8rem;
+      border-radius: 20px;
+    }
+    .info-item {
+      flex: 1 1 180px;
+    }
+    .info-item h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #8b7f72;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+    .info-item p {
+      font-size: 0.95rem;
+    }
+    .faq-mini {
+      margin: 2rem 0 0.8rem;
+    }
+    .faq-mini details {
+      border-bottom: 1px solid #e5ddd2;
+      padding: 0.8rem 0;
+    }
+    .faq-mini details:first-of-type {
+      border-top: 1px solid #e5ddd2;
+    }
+    .faq-mini summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #3e382f;
+      padding: 0.2rem 0;
+    }
+    .faq-mini details p {
+      margin-top: 0.5rem;
+      padding-left: 0.2rem;
+      color: #4f4840;
+    }
+    .footer-note {
+      margin-top: 2.8rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e6dfd5;
+      font-size: 0.9rem;
+      color: #6b6257;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    a {
+      color: #8a6b4f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color 0.1s;
+    }
+    a:hover {
+      color: #5e4532;
+    }
+    .btn-ghost {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #d7ccc0;
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #6a5d4e;
+      text-decoration: none;
+      transition: all 0.1s;
+      margin-top: 0.15rem;
+    }
+    .btn-ghost:hover {
+      background: #ede5db;
+      border-color: #b8a692;
+      color: #3f342a;
+    }
+    @media (max-width: 680px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem;
+        border-radius: 20px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        padding-left: 0.8rem;
+      }
+      .subhead {
+        padding-left: calc(0.8rem + 5px);
+      }
+      .grid-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .intro {
+        padding: 1rem 1.2rem;
+      }
+      .info-section {
+        padding: 1rem 1.2rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>比分网 · 赛果与数据索引</h1>
+  <div class="subhead">从实时比分类，深入到运动知识的结构化入口</div>
+
+  <div class="intro">
+    <p><strong>比分</strong>这个词，对体育观众来说是一瞬间的结果，但对数据习惯者而言，它是整场比赛浓缩后的第一行索引。比分网不只是罗列数字——每一条比分背后都连接着赛事进程、历史交锋、积分形态与赛季脉络。</p>
+    <p>本页是一份轻量的知识库式索引，帮你理解比分数据所处的上下文，以及如何利用这些信息做出自己的判断。如果你对某场具体对阵感兴趣，<a href="https://m-scores.com">比分网</a>提供了结构化的实时内容，可以进一步查阅。</p>
+  </div>
+
+  <div class="grid-cards">
+    <div class="card">
+      <h3>📊 赛事分类</h3>
+      <p>足球、篮球、网球、电竞……比分网覆盖的联赛和杯赛超过 40 个。按地区、按时间线浏览，比分从来不是孤立数字，而是赛事体系的切片。</p>
+    </div>
+    <div class="card">
+      <h3>🧮 统计上下文</h3>
+      <p>一个比分（例如 2‑1）需要配合射门、控球、犯规等辅助数据才有解读价值。比分网将核心数据与比分并列展示，便于快速建立比赛全貌。</p>
+    </div>
+    <div class="card">
+      <h3>📅 赛程与回溯</h3>
+      <p>实时比分之所以有用，离不开它前后的赛程预告和历史交锋记录。通过比分网你能看到某支球队近 6 场走势，而不仅仅是当下的比数。</p>
+    </div>
+    <div class="card">
+      <h3>🔎 筛选与比较</h3>
+      <p>同时关注多个联赛？比分网支持按联赛、日期、状态筛选。你可以横向比较同轮次多场比赛的比分与关键节点（红牌、点球、破冰时间）。</p>
+    </div>
+  </div>
+
+  <div class="highlight-block">
+    <p><strong>💡 使用提示</strong> 比分页面中的时间轴（例如 12' ⚽ 23' 🟨）不只是时间戳。尝试将进球与换人时间关联起来，往往能看出教练的战术调整节奏。比分网保留了这些序列，方便回溯转折点。</p>
+  </div>
+
+  <div class="info-section">
+    <div class="info-item">
+      <h4>📌 相关信息</h4>
+      <p>每场比赛的「交锋记录」模块会显示近 5 次同主客场的比分走势——用来判断“大球倾向”或“平局惯性”很有帮助。</p>
+    </div>
+    <div class="info-item">
+      <h4>🧩 数据粒度</h4>
+      <p>从半场比分、角球比到红黄牌分布，比分网按比赛状态分层展示。你可以在一个页面里同时看到基础比分和进阶数据。</p>
+    </div>
+    <div class="info-item">
+      <h4>⚙️ 场景举例</h4>
+      <p>赛前查看双方近 6 场得失球比分，推测节奏；赛中盯实时比分配合事件时间线；赛后用最终比分对比赛前预期差。</p>
+    </div>
+  </div>
+
+  <div class="faq-mini">
+    <details>
+      <summary>比分网的数据更新频率如何？</summary>
+      <p>绝大部分主流联赛实现秒级更新（进球、红牌等关键事件延迟通常在 5–15 秒内）。非顶级联赛更新间隔稍长，但每日超过 2000 场次的比分数据均经过结构化整理。</p>
+    </details>
+    <details>
+      <summary>如何利用历史比分做趋势参考？</summary>
+      <p>建议关注同一赛事下主客队近 6 场的得失球比分，而非只看胜负。例如连续 4 场打出 2.5 球以上的比分，说明该队近期比赛节奏偏向开放。</p>
+    </details>
+    <details>
+      <summary>比分网是否包含电竞比分？</summary>
+      <p>是的，目前涵盖主流 MOBA 与 FPS 赛事的实时比分及局内关键数据。电竞比分的呈现逻辑与体育一致：地图比分 + 核心经济/击杀差。</p>
+    </details>
+  </div>
+
+  <div class="footer-note">
+    <span>一份围绕比分展开的知识索引 · 基于公开赛事数据整理</span>
+    <span><a href="https://m-scores.com" class="btn-ghost">比分网</a></span>
+  </div>
+</div>
+</body>
+</html>
