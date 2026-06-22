@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中彩网 · 信息索引与资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f1eb;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            color: #3a3530;
+            line-height: 1.8;
+            padding: 1.5rem;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 2rem auto;
+            background: #fcfaf7;
+            padding: 2.8rem 2.2rem 3rem;
+            border-radius: 24px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        /* 叙事风格标题 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 0.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #d8d2c8;
+            color: #2f2a25;
+        }
+
+        .subhead {
+            font-size: 0.95rem;
+            color: #7a7068;
+            margin-top: -0.2rem;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .opening {
+            font-size: 1rem;
+            margin-bottom: 1.6rem;
+            text-indent: 0;
+        }
+
+        .opening strong {
+            font-weight: 500;
+            color: #4d443b;
+        }
+
+        .intro-block {
+            background: #f2ede7;
+            padding: 1.4rem 2rem;
+            border-left: 4px solid #b8aaa0;
+            margin: 1.8rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .intro-block p {
+            margin-bottom: 0.6rem;
+            font-size: 0.98rem;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin: 2rem 0 1rem;
+            color: #3c342e;
+            letter-spacing: 1px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.6rem 0 0.6rem 2.2rem;
+            position: relative;
+            border-bottom: 1px dashed #e1d9d1;
+            font-size: 0.98rem;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.8rem;
+            color: #9a8c82;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .quote-note {
+            background: #f9f4ee;
+            border: 1px solid #dcd3ca;
+            padding: 1.2rem 1.8rem;
+            border-radius: 16px;
+            margin: 2rem 0 1.6rem;
+            font-size: 0.95rem;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .quote-note p {
+            margin-bottom: 0.4rem;
+        }
+
+        .quote-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .inline-link {
+            color: #5d5147;
+            text-decoration: none;
+            border-bottom: 1px solid #b3a79d;
+            padding-bottom: 1px;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 400;
+        }
+
+        .inline-link:hover {
+            color: #2f2822;
+            border-bottom-color: #7d6f63;
+        }
+
+        .closing {
+            margin-top: 2.6rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e2dad2;
+            font-size: 0.95rem;
+            color: #5f564e;
+        }
+
+        .closing p {
+            margin-bottom: 0.25rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2dad2;
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0.8rem;
+            }
+            .page {
+                padding: 1.8rem 1.2rem 2.2rem;
+                margin: 0.8rem auto;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .intro-block {
+                padding: 1rem 1.2rem;
+            }
+            .feature-list li {
+                padding-left: 1.6rem;
+            }
+            .feature-list li::before {
+                left: 0.4rem;
+            }
+            .quote-note {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .page {
+                padding: 1.2rem 0.8rem;
+            }
+            .opening {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>中彩网</h1>
+    <div class="subhead">—— 资料整理与信息索引手记</div>
+
+    <div class="opening">
+        <strong>开始之前，先有一处落脚。</strong><br>
+        在浏览大量信息时，我们往往需要一个稳定的起点，不是为了立刻得出结论，而是为了把散落的条目安置在妥当的位置。<br>
+        这份页面试图从资料整理的角度，记录一个索引的轮廓：<a href="https://portal-cns-zhcw.com" class="inline-link">中彩网</a>，作为其中一条路径。
+    </div>
+
+    <!-- 承接段落 -->
+    <div class="intro-block">
+        <p>它不是唯一的入口，但提供了一种整理方式：将分散的条目、通知、分类信息汇集于一处，形成可回溯的档案。</p>
+        <p>对于经常需要查阅历史资料或核对细节的人来说，这类索引的价值不在于即时更新，而在于结构本身——让每一条信息都有可归的位置。</p>
+    </div>
+
+    <h2 class="section-title">作为信息索引的几个特点</h2>
+    <ul class="feature-list">
+        <li>内容区块划分清晰，便于按主题或时间检索，减少重复翻找的负担。</li>
+        <li>页面结构偏向静态，适合作为长期参考的锚点，而非频繁变动的推送流。</li>
+        <li>资料呈现方式克制，不过度依赖视觉强调，更侧重于文字本身的可读性。</li>
+        <li>链接与栏目分类保持相对稳定，减少了因导航变动而造成的迷失感。</li>
+    </ul>
+
+    <!-- 引用/提示框 -->
+    <div class="quote-note">
+        <p>✎ 整理笔记 · 如果你习惯将信息归档后再做判断，那么一个结构清晰的索引页面可以充当临时的 “书架”。</p>
+        <p>—— 这是从资料管理角度出发的观察，而非对内容本身的评价。</p>
+    </div>
+
+    <p style="font-size:0.95rem; margin-top: 1.2rem;">
+        在多次查阅中，我发现保持一个稳定的参照页面有助于减少信息焦虑。
+        <a href="https://portal-cns-zhcw.com" class="inline-link">中彩网</a> 的页面布局并不复杂，但正因如此，它适合作为长期资料整理的一个节点。
+    </p>
+
+    <!-- 温和结尾 -->
+    <div class="closing">
+        <p>索引的最终目的不是为了收藏，而是为了在需要时能快速找到来处。</p>
+        <p>或许，一个简单、克制的页面，本身就已经是足够好的整理工具。</p>
+    </div>
+
+    <hr>
+    <p style="font-size:0.8rem; color:#9a8f86; text-align:right; margin-top:0.6rem;">· 资料索引 ·</p>
+</div>
+</body>
+</html>
