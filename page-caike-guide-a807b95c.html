@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竞彩网 · 知识库 · 再次访问与持续关注</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f8f6f2;
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #2c2c2c;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 960px;
+      width: 100%;
+      background: #fdfcf9;
+      border-radius: 28px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      padding: 2.4rem 2rem;
+      margin: 1rem 0 3rem;
+    }
+
+    /* 目录感布局：标题层次 + 分隔线 + 侧标 */
+    .toc-marker {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #b7a99a;
+      border-left: 4px solid #dacfc3;
+      padding-left: 12px;
+      margin-bottom: 0.6rem;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #2e2b27;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 0.95rem;
+      color: #6b6159;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #e9e2d9;
+      padding-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #3e3934;
+      margin: 2rem 0 1rem 0;
+      padding-left: 0;
+      display: inline-block;
+      border-bottom: 2px solid #dacfc3;
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #4a443e;
+      margin: 1.5rem 0 0.6rem 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 0.97rem;
+    }
+
+    a {
+      color: #7a6b5d;
+      text-decoration: none;
+      border-bottom: 1px solid #d3c9bf;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #3d352e;
+      border-bottom-color: #7a6b5d;
+    }
+
+    /* 特色引用块 / 提示区 */
+    .notice-box {
+      background: #f2ede7;
+      border-left: 6px solid #b3a191;
+      padding: 1.2rem 1.4rem;
+      border-radius: 0 16px 16px 0;
+      margin: 1.8rem 0;
+      font-size: 0.95rem;
+    }
+
+    .notice-box strong {
+      color: #4b4138;
+      font-weight: 600;
+    }
+
+    .info-card {
+      background: #f6f2ec;
+      padding: 1.2rem 1.4rem;
+      border-radius: 20px;
+      margin: 1.4rem 0;
+    }
+
+    .info-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.2rem 0 0.6rem;
+    }
+
+    .info-grid-item {
+      flex: 1 1 180px;
+      background: #f5f0ea;
+      border-radius: 18px;
+      padding: 1rem 1.2rem;
+    }
+
+    .info-grid-item h4 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #3d3731;
+      margin-bottom: 0.3rem;
+    }
+
+    .info-grid-item p {
+      font-size: 0.88rem;
+      margin-bottom: 0;
+      color: #5f564d;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e6ded5;
+      margin: 2rem 0 1.5rem;
+      width: 100%;
+    }
+
+    .faq-preview {
+      background: #faf7f2;
+      border-radius: 20px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.8rem 0 0.8rem;
+    }
+
+    .faq-preview dt {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      color: #3f3a34;
+    }
+
+    .faq-preview dd {
+      margin-left: 0;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #5b5249;
+    }
+
+    .faq-preview dd:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta-note {
+      font-size: 0.85rem;
+      color: #8f8379;
+      border-top: 1px solid #e9e2d9;
+      padding-top: 1.2rem;
+      margin-top: 1.8rem;
+      text-align: left;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+      .page {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .info-grid {
+        flex-direction: column;
+      }
+      .info-grid-item {
+        flex: 1 1 auto;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+      .notice-box {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 区：再次访问 & 收藏 -->
+  <div class="toc-marker">· 持续关注 · 知识入口</div>
+  <h1>竞彩网 · 信息集合</h1>
+  <div class="subhead">索引式页面 · 适合再次查阅与收藏</div>
+
+  <p style="font-size: 1rem; margin-top: 0.8rem;">
+    对于经常查阅竞彩相关内容的用户，一个结构清晰、便于快速定位的知识库比碎片化搜索更加高效。
+    <a href="https://page-caike.com">竞彩网</a> 整理的信息模块围绕常见需求展开，
+    覆盖基础规则、赛事类型、术语说明与实用提示。以下为当前可参考的目录分区。
+  </p>
+
+  <!-- 介绍区：结构说明 + 目录感 -->
+  <h2>信息分区</h2>
+  <div class="info-grid">
+    <div class="info-grid-item">
+      <h4>赛事与玩法</h4>
+      <p>主流联赛、杯赛对应的竞猜类型，让球、胜平负、比分等基础概念索引。</p>
+    </div>
+    <div class="info-grid-item">
+      <h4>术语·速查</h4>
+      <p>常用竞彩术语、赔率表述、奖金计算方式，减少阅读歧义。</p>
+    </div>
+    <div class="info-grid-item">
+      <h4>规则摘要</h4>
+      <p>提前关盘、无效场次、奖金下限等精简说明，便于复检。</p>
+    </div>
+  </div>
+
+  <!-- 提示区：再次访问 / 收藏建议 -->
+  <div class="notice-box">
+    <strong>📌 再次访问与收藏</strong><br>
+    如果觉得当前页面骨架有用，可以将此页加入浏览器书签，或直接在地址栏输入 <a href="https://page-caike.com">竞彩网</a> 返回。
+    后续内容会保持补充与修订，定期关注即可获取更新。
+  </div>
+
+  <!-- 说明区：场景 + 使用节奏 -->
+  <h2>常见使用场景</h2>
+  <p>很多用户会在周末赛事密集时集中查阅，或在新赛季开始时重新梳理规则差异。
+    以下是根据反馈整理的三个典型场景：</p>
+  <div class="info-card">
+    <p><strong>· 赛季初回顾</strong> — 联赛规则、让球数调整、新增赛事类型。</p>
+    <p><strong>· 投注前核对</strong> — 确认所选场次的开赛时间、让球方、奖金区间。</p>
+    <p><strong>· 赛后复盘参考</strong> — 对比预测与实际赛果，辅助理解变动因素。</p>
+  </div>
+
+  <!-- 相关信息区：FAQ 摘要 + 提示 -->
+  <h2>FAQ 摘要</h2>
+  <div class="faq-preview">
+    <dl>
+      <dt>竞彩停售时间是否固定？</dt>
+      <dd>大部分竞彩场次在开赛前5–15分钟停止销售，具体以页面标注为准，建议尽早确认。</dd>
+      <dt>“让球”与“不让球”如何区分？</dt>
+      <dd>让球玩法在赔率中已包含虚拟让球数，与最终实际比分无关，只影响彩果判定。</dd>
+      <dt>奖金优化是什么意思？</dt>
+      <dd>部分组合投注会显示优化后的预估奖金，可通过页面试算了解不同选项组合。</dd>
+    </dl>
+  </div>
+
+  <!-- 额外提示区：持续关注 -->
+  <div class="notice-box" style="border-left-color: #9a8b7d;">
+    <strong>⏳ 持续关注 · 保持更新</strong><br>
+    该知识库目录会不定期修订，涉及规则调整、新增赛事或格式优化。
+    建议每两周回看一次，或使用 <a href="https://page-caike.com">竞彩网</a> 随时确认最新信息。
+  </div>
+
+  <hr>
+
+  <!-- 结尾：简短引导，避免重复 -->
+  <p style="font-size: 0.9rem; color: #6b6159;">
+    本页面仅作为入口索引，所有信息均以 <a href="https://page-caike.com">竞彩网</a> 正式发布内容为准。
+    页面本身不提供投注、预测或诱导性建议。
+  </p>
+  <div class="meta-note">
+    · 知识库格式 · 无夸大承诺 · 仅做信息整理
+  </div>
+
+</div>
+</body>
+</html>
